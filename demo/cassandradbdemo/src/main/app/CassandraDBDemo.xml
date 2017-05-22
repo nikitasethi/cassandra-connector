@@ -34,7 +34,7 @@ http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/m
 	"replicationFactor": payload.replicationFactor,
 	"replicationStrategyClass": payload.replicationStrategyClass
 } as :object {
-	class : "com.mulesoft.mule.cassandradb.metadata.CreateKeyspaceInput"
+	class : "org.mule.modules.cassandradb.metadata.CreateKeyspaceInput"
 }]]></dw:set-payload>
         </dw:transform-message>
         <cassandradb:create-keyspace config-ref="CassandraDB" doc:name="CassandraDB"/>
@@ -64,7 +64,7 @@ payload]]></dw:set-payload>
 	"tableName": payload.tableName,
 	"keyspaceName": payload.keyspaceName
 } as :object {
-	class : "com.mulesoft.mule.cassandradb.metadata.CreateTableInput"
+	class : "org.mule.modules.cassandradb.metadata.CreateTableInput"
 }]]></dw:set-payload>
         </dw:transform-message>
         <cassandradb:create-table config-ref="CassandraDB" doc:name="CassandraDB" />
@@ -149,7 +149,7 @@ payload
 	"parameters": payload.parameters
 }
 as :object {
-	class : "com.mulesoft.mule.cassandradb.metadata.CQLQueryInput"
+	class : "org.mule.modules.cassandradb.metadata.CQLQueryInput"
 }
 ]]></dw:set-payload>
             <dw:set-variable variableName="Parameters"><![CDATA[%dw 1.0
@@ -223,7 +223,7 @@ payload]]></dw:set-payload>
 	"column": payload.column,
 	"type": payload.type
 } as :object {
-	class : "com.mulesoft.mule.cassandradb.metadata.AlterColumnInput"
+	class : "org.mule.modules.cassandradb.metadata.AlterColumnInput"
 }]]></dw:set-payload>
         </dw:transform-message>
         <cassandradb:change-column-type config-ref="CassandraDB" table="#[flowVars['tableName']]" doc:name="CassandraDB" keyspaceName="#[flowVars['keyspaceName']]"/>
@@ -248,7 +248,7 @@ payload]]></dw:set-payload>
 	"column": payload.column,
 	"type": payload.type
 } as :object {
-	class : "com.mulesoft.mule.cassandradb.metadata.AlterColumnInput"
+	class : "org.mule.modules.cassandradb.metadata.AlterColumnInput"
 }]]></dw:set-payload>
         </dw:transform-message>
         <cassandradb:add-new-column config-ref="CassandraDB" table="#[flowVars['tableName']]" doc:name="CassandraDB" keyspaceName="#[flowVars['keyspaceName']]"/>

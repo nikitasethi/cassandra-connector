@@ -29,7 +29,7 @@ import java.util.Map;
  *
  * @author MuleSoft, Inc.
  */
-@Connector(name = "cassandradb", schemaVersion = "3.2", friendlyName = "CassandraDB", minMuleVersion = "3.5")
+@Connector(name = "cassandradb", schemaVersion = "3.2", friendlyName = "CassandraDB", minMuleVersion = "3.6")
 @RequiresEnterpriseLicense(allowEval = true)
 public class CassandraDBConnector {
 
